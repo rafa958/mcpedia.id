@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCPEDIA ID</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+        header {
+            background-color: rgba(46, 204, 113, 0.8);
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #2ecc71;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 5px solid white;
+            border-radius: 10px;
+            background-color: black;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+        .hidden {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .visible {
+            display: block;
+            opacity: 1;
+        }
+        footer {
+            background-color: rgba(46, 204, 113, 0.8);
+            padding: 20px;
+            color: white;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function toggleInfo(id) {
+            let element = document.getElementById(id);
+            if (element.classList.contains("hidden")) {
+                element.classList.remove("hidden");
+                element.classList.add("visible");
+            } else {
+                element.classList.remove("visible");
+                element.classList.add("hidden");
+            }
+        }
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        window.onload = function() {
+            let canvas = document.getElementById("logoCanvas");
+            let ctx = canvas.getContext("2d");
+            let img = new Image();
+            img.src = "https://upload.wikimedia.org/wikipedia/commons/3/34/Minecraft_Logo.png";
+            img.onload = function() {
+                ctx.drawImage(img, 20, 20, 260, 100);
+            };
+        };
+    </script>
+</head>
+<body>
+    <header>MCPEDIA ID</header>
+    <button onclick="scrollToSection('trailer')">Lihat Trailer</button>
+    <button onclick="scrollToSection('minecraft-types')">Macam-Macam Minecraft</button>
+    <button onclick="scrollToSection('difficulty-modes')">Difficulty & Game Mode</button>
+    <div class="content">
+        <canvas id="logoCanvas" width="300" height="150"></canvas>
+        <div class="card" id="trailer">
+            <h2>Trailer Minecraft</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/MmB9b5njVbA" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="card" id="minecraft-types">
+            <h2>Macam-Macam Minecraft</h2>
+            <ul>
+                <li><strong>Minecraft Java Edition:</strong> Versi asli Minecraft yang tersedia untuk PC, memiliki banyak fitur modding dan server khusus.</li>
+                <li><strong>Minecraft Bedrock Edition:</strong> Versi lintas platform yang dapat dimainkan di PC, konsol, dan perangkat seluler.</li>
+                <li><strong>Minecraft Education Edition:</strong> Versi edukasi yang dirancang untuk pembelajaran di sekolah dan lingkungan akademik.</li>
+                <li><strong>Minecraft Dungeons:</strong> Game spin-off berbasis dungeon crawler dengan mekanisme permainan yang berbeda dari Minecraft utama.</li>
+                <li><strong>Minecraft Legends:</strong> Game strategi aksi yang menceritakan kisah dunia Minecraft dalam perspektif baru.</li>
+            </ul>
+        </div>
+        <div class="card" id="difficulty-modes">
+            <h2>Macam Difficulty dan Game Mode</h2>
+            <ul>
+                <li><strong>Peaceful:</strong> Tidak ada monster, kesehatan pulih otomatis.</li>
+                <li><strong>Easy:</strong> Monster muncul, tetapi memberikan sedikit damage.</li>
+                <li><strong>Normal:</strong> Monster memberikan damage standar.</li>
+                <li><strong>Hard:</strong> Monster lebih kuat dan menyebabkan lebih banyak damage.</li>
+            </ul>
+            <ul>
+                <li><strong>Survival Mode:</strong> Pemain harus mengumpulkan sumber daya dan bertahan hidup.</li>
+                <li><strong>Creative Mode:</strong> Pemain memiliki akses ke semua blok dan dapat terbang.</li>
+                <li><strong>Adventure Mode:</strong> Dirancang untuk peta khusus, pemain tidak bisa menghancurkan blok tanpa alat yang benar.</li>
+                <li><strong>Hardcore Mode:</strong> Sama seperti Survival tetapi dengan satu nyawa, jika mati dunia akan terhapus.</li>
+                <li><strong>Spectator Mode:</strong> Pemain bisa terbang dan melihat dunia tanpa berinteraksi dengannya.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 MCPEDIA ID | ini website milik rafa minelord.
+    </footer>
+</body>
+</html>
