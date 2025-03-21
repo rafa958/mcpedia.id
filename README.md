@@ -1,0 +1,2 @@
+# mcpedia.id
+website
